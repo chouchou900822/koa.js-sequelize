@@ -1,9 +1,3 @@
-/*!
- * koa-todo - config.js
- * Copyright(c) 2014 dead_horse <dead_horse@qq.com>
- * MIT Licensed
- */
-
 'use strict';
 
 /**
@@ -11,12 +5,13 @@
  */
 
 var version = require('./package.json').version;
-var path = require('path');
+var name = require('./package.json').name;
 
 var config = {
   version: version,
-  debug: process.env.NODE_ENV !== 'production',
-  port: process.env.PORT || 3000
+  debug: process.env.NODE_ENV || 'development',
+  port: process.env.PORT || 3000,
+  name: name
 };
 
 module.exports = config;

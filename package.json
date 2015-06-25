@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "hiredis": "^0.4.0",
+    "jwt-simple": "^0.3.0",
     "koa": "~0.19.1",
     "koa-middlewares": "~2.1.0",
     "mysql": "^2.7.0",
