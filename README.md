@@ -1,1 +1,1 @@
-#api for food app
+# Node.js seed boilerplate with koa.js&sequelize(mysql) for app server backend.
