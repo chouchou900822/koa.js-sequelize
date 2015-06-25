@@ -1,0 +1,30 @@
+{
+  "name": "food",
+  "version": "0.0.1",
+  "description": "api for food app",
+  "scripts": {
+    "start": "node --harmony app.js"
+  },
+  "dependencies": {
+    "hiredis": "^0.4.0",
+    "koa": "~0.19.1",
+    "koa-middlewares": "~2.1.0",
+    "mysql": "^2.7.0",
+    "redis": "^0.12.1",
+    "sequelize": "^3.3.2",
+    "sequelize-cli": "^1.7.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "food"
+  ],
+  "engines": {
+    "node": "~0.12.1"
+  },
+  "author": "Edison",
+  "license": "MIT"
+}

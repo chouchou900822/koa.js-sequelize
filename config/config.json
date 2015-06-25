@@ -1,0 +1,27 @@
+{
+  "development": {
+    "username": "root",
+    "password": "123456",
+    "database": "food_development",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "redis_port": "6379",
+    "redis_host": "127.0.0.1",
+    "redis_auth": null,
+    "logging": false
+  },
+  "test": {
+    "username": "root",
+    "password": "123456",
+    "database": "food_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "123456",
+    "database": "food_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
