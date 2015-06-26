@@ -4,28 +4,34 @@ var db = require('../../../../db');
 var jwt = require('jwt-simple');
 var config = require('../../../../config');
 var moment = require('moment');
+var client = require('../../../../redis');
 
-//var decoded = jwt.decode(token, secret);
 
 exports.insert = function* (user) {
   var payload = {phoneNumber: user.phoneNumber};
   var secret = config.name;
   var token = jwt.encode(payload, secret);
   var username = moment().unix();
-  var results = yield db.user.findOrCreate({
-    where: {
-      phoneNumber: user.phoneNumber
-    },
-    defaults: {
-      password: user.password,
-      username: username
+  var hash = yield client.hgetall(user.phoneNumber);
+  if (hash.code == user.code) {
+    var results = yield db.user.findOrCreate({
+      where: {
+        phoneNumber: user.phoneNumber
+      },
+      defaults: {
+        password: user.password,
+        username: username
+      }
+    });
+    if (results[1]) {
+      return token;
+    } else {
+      return 'existError';
     }
-  });
-  if (results[1]) {
-    return token;
   } else {
-    return false;
+    return 'codeError';
   }
+
 };
 exports.get = function* (user) {
   var payload = {phoneNumber: user.phoneNumber};
@@ -37,8 +43,18 @@ exports.get = function* (user) {
       password: user.password
     }
   });
-  if(results){
+  if (results) {
     return token;
+  } else {
+    return false;
+  }
+};
+exports.update = function* (user, password, newPassword) {
+  if (user.password == password) {
+    var newUser = yield user.updateAttributes({
+      password: newPassword
+    });
+    return newUser;
   } else {
     return false;
   }

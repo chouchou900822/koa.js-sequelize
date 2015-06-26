@@ -20,7 +20,22 @@
 
       <form action="/api/v1/users" method="post" accept-charset="utf-8">
         phoneNumber:<input name="phoneNumber" value=""/>
+        code:<input name="code" value=""/>
         password:<input name="password" value=""/>
+        <input type="submit" name="commit" value="提交" class="btn btn-default" class="button">
+
+      </form>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h3><span class="label label-danger">POST</span>/api/v1/users/code</h3>
+
+      <p>发送验证码</p>
+
+      <form action="/api/v1/users/code" method="post" accept-charset="utf-8">
+        phoneNumber:<input name="phoneNumber" value=""/>
         <input type="submit" name="commit" value="提交" class="btn btn-default" class="button">
 
       </form>
@@ -38,6 +53,24 @@
         password:<input name="password" value=""/>
         <input type="submit" name="commit" value="提交" class="btn btn-default" class="button">
 
+      </form>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h3><span class="label label-default">PUT</span>/api/v1/users/reset-password</h3>
+
+      <p>修改密码</p>
+
+      <p>
+        access-token: <input name="access-token" value="" id="reset-password-token"/>
+      </p>
+
+      <form action="/api/v1/users/reset-password" method="put" accept-charset="utf-8" id="reset-password-form">
+        password:<input name="password" value=""/>
+        newPassword:<input name="newPassword" value=""/>
+        <input type="submit" name="commit" value="提交" class="btn btn-default" class="button">
       </form>
     </div>
   </div>
