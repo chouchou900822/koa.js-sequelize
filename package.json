@@ -10,6 +10,7 @@
     "jwt-simple": "^0.3.0",
     "koa": "~0.19.1",
     "koa-middlewares": "~2.1.0",
+    "moment": "^2.10.3",
     "mysql": "^2.7.0",
     "redis": "^0.12.1",
     "sequelize": "^3.3.2",

@@ -19,10 +19,23 @@
       <p>用户注册</p>
 
       <form action="/api/v1/users" method="post" accept-charset="utf-8">
-        username:<input name="username" value=""/>
-        phoneNumber:<input name="phone_number" value=""/>
+        phoneNumber:<input name="phoneNumber" value=""/>
         password:<input name="password" value=""/>
-        email:<input name="email" value=""/>
+        <input type="submit" name="commit" value="提交" class="btn btn-default" class="button">
+
+      </form>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h3><span class="label label-danger">POST</span>/api/v1/users/login</h3>
+
+      <p>用户登陆</p>
+
+      <form action="/api/v1/users/login" method="post" accept-charset="utf-8">
+        phoneNumber:<input name="phoneNumber" value=""/>
+        password:<input name="password" value=""/>
         <input type="submit" name="commit" value="提交" class="btn btn-default" class="button">
 
       </form>
