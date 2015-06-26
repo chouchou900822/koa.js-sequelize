@@ -34,13 +34,13 @@ exports.login = function* () {
     phoneNumber: phoneNumber,
     password: password
   };
-  var token = yield User.get(user);
-  if (!token) {
+  var result = yield User.get(user);
+  if (result) {
+    this.body = {token: result};
+    this.status = 201;
+  } else {
     this.status = 403;
     this.body = {message: "手机号或密码错误！"};
-  } else {
-    this.body = {token: token};
-    this.status = 201;
   }
 };
 exports.sendCode = function* () {
@@ -67,5 +67,16 @@ exports.resetPassword = function* () {
     this.body = {message: '原密码错误!'};
   }
 };
-exports.show = function*() {
+exports.findPassword = function*() {
+  var password = this.request.body.password;
+  var code = this.request.body.code;
+  var user = this.request.user;
+  var result = yield User.codeUpdate(user, password, code);
+  if (result) {
+    this.status = 201;
+    this.body = {newUser: result};
+  } else {
+    this.status = 403;
+    this.body = {message: '验证码错误!'};
+  }
 };

@@ -58,3 +58,14 @@ exports.update = function* (user, password, newPassword) {
     return false;
   }
 };
+exports.codeUpdate = function* (user, password, code) {
+  var hash = yield client.hgetall(user.phoneNumber);
+  if (hash.code == code) {
+    var newUser = yield user.updateAttributes({
+      password: password
+    });
+    return newUser;
+  } else {
+    return false;
+  }
+};

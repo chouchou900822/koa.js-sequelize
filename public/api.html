@@ -74,6 +74,24 @@
       </form>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h3><span class="label label-default">PUT</span>/api/v1/users/find-password</h3>
+
+      <p>找回密码</p>
+
+      <p>
+        access-token: <input name="access-token" value="" id="find-password-token"/>
+      </p>
+
+      <form action="/api/v1/users/find-password" method="put" accept-charset="utf-8" id="find-password-form">
+        password:<input name="password" value=""/>
+        code:<input name="code" value=""/>
+        <input type="submit" name="commit" value="提交" class="btn btn-default" class="button">
+      </form>
+    </div>
+  </div>
 </div>
 </body>
 </html>
