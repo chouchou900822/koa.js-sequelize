@@ -1,7 +1,7 @@
 {
-  "name": "food",
+  "name": "koa",
   "version": "0.0.1",
-  "description": "api for food app",
+  "description": "koa demo",
   "scripts": {
     "start": "node --harmony app.js"
   },
@@ -23,7 +23,7 @@
     "url": ""
   },
   "keywords": [
-    "food"
+    "koa"
   ],
   "engines": {
     "node": "~0.12.1"

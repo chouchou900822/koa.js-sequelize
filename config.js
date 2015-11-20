@@ -9,7 +9,7 @@ var name = require('./package.json').name;
 
 var config = {
   version: version,
-  debug: process.env.NODE_ENV || 'development',
+  env: process.env.NODE_ENV || 'development',
   port: process.env.PORT || 3000,
   name: name
 };

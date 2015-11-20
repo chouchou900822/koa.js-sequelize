@@ -15,5 +15,4 @@ module.exports = function routes(app) {
   app.post('/api/v1/users/code', user.sendCode);
   app.put('/api/v1/users/reset-password', auth.isAuthed, user.resetPassword);
   app.put('/api/v1/users/find-password', auth.isAuthed, user.findPassword);
-
 };

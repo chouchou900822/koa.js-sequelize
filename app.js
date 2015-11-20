@@ -37,7 +37,7 @@ app.use(middlewares.staticCache(path.join(__dirname, 'public'), {
 }));
 app.use(middlewares.bodyParser());
 
-if (config.debug && process.env.NODE_ENV !== 'test') {
+if (config.env && process.env.NODE_ENV !== 'test') {
   app.use(middlewares.logger());
 }
 

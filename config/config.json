@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "123456",
-    "database": "food_development",
+    "database": "koa_development",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "redis_port": "6379",
@@ -13,14 +13,14 @@
   "test": {
     "username": "root",
     "password": "123456",
-    "database": "food_test",
+    "database": "koa_test",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
     "password": "123456",
-    "database": "food_production",
+    "database": "koa_production",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }
